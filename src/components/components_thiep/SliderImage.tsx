@@ -1,32 +1,23 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const LIST_IMG = [
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-  'https://swiperjs.com/demos/images/nature-1.jpg',
-];
+import l1 from '@/image/listImage/l1.png';
+import l2 from '@/image/listImage/l2.png';
+import l3 from '@/image/listImage/l3.png';
+import l4 from '@/image/listImage/l4.png';
+import l5 from '@/image/listImage/l5.png';
+import l6 from '@/image/listImage/l6.png';
+import l7 from '@/image/listImage/l7.png';
+import l8 from '@/image/listImage/l8.png';
+import l9 from '@/image/listImage/l9.png';
+import l10 from '@/image/listImage/l10.png';
+
+const LIST_IMG = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10];
 export default function SliderImage() {
   const refWrapperSwiper = useRef<any>();
   const [indexSlide, setIndexSlide] = useState<number>(0);
@@ -74,7 +65,7 @@ export default function SliderImage() {
               className='aspect-video max-w-[550px]'
               key={index}
             >
-              <img src={item || ''} />
+              <Image src={item} width={992} height={588} alt='hình ảnh' />
             </StyleSwiperSlide>
           );
         })}

@@ -41,6 +41,12 @@
 }
 
 @font-face {
+  font-family: 'DancingScript';
+  font-weight: 700;
+  src: url('./fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Roboto';
   font-weight: 500;
   src: url('./fonts/Roboto-Medium.ttf') format('truetype');
@@ -59,8 +65,20 @@
   src: url('./fonts/Lovely Valentine Script.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'TikTokText-Regular';
+  font-weight: 400;
+  src: url('./fonts/TikTokText-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SVN-Daisy Lau';
+  font-weight: 400;
+  src: url('./fonts/SVN-Daisy Lau.otf') format('opentype');
+}
+
 * {
-  font-family: fantasy;
+  font-family: 'TikTokText-Regular';
   font-weight: 300;
 }
 

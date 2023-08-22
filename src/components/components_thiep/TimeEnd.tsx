@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
 
+import TextLink from '@/components/atoms/text_links/TextLink';
 import Typography from '@/components/atoms/typography/Typography';
 
 import IconPlayAudio from '@/image/icon-playing.gif';
@@ -88,14 +89,25 @@ export default function TimeEnd() {
 
   return (
     <div className='mb-[48px] flex flex-col items-center justify-center md:mb-[24px]'>
-      <Typography variant='b2m' className='text-center'>
+      <Typography
+        variant='b2m'
+        className='text-center font-secondary_2 text-[16px]'
+      >
         Time end
       </Typography>
-      <Typography variant='text'>
+      <Typography variant='text' className='font-secondary_2 text-[14px]'>
         {timeRemaining.days} days {`0${timeRemaining.hours}`.slice(-2)} hours{' '}
         {`0${timeRemaining.minutes}`.slice(-2)} minutes{' '}
         {`0${timeRemaining.seconds}`.slice(-2)} seconds
       </Typography>
+      <TextLink
+        href='https://www.google.com/maps/search/b%C3%ACnh+h%C3%B2a+an+d%C3%A2n+tuy+an+ph%C3%BA+y%C3%AAn/@13.3346358,109.2148624,19.99z?entry=ttu'
+        target='_blank'
+        className='mt-[12px]'
+      >
+        Địa điểm tiệc
+      </TextLink>
+
       <audio controls ref={audioRef} className='hidden' loop>
         <source src='./ngaycuoi.mp3' type='audio/mpeg' />
       </audio>

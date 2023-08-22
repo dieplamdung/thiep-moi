@@ -1,5 +1,3 @@
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-
 import Image from 'next/image';
 import { useEffect } from 'react';
 import 'swiper/css';
@@ -11,74 +9,72 @@ import 'aos/dist/aos.css';
 import initializeAOS from '@/lib/aos';
 
 import Container from '@/components/atoms/container/Container';
-import Content from '@/components/components_thiep/Content';
 import ContentHeader from '@/components/components_thiep/ContentHeader';
 import ContentThiep from '@/components/components_thiep/ContentThiep';
 import SliderImage from '@/components/components_thiep/SliderImage';
 import TimeEnd from '@/components/components_thiep/TimeEnd';
 import Seo from '@/components/Seo';
 
-import ImgBg from '@/image/hinhnen.jpg';
 import ImgLineFooter from '@/image/root_LargeDivider_F4aFgUc.png';
 import ImgH2 from '@/image/thiep/h_1.png';
 import ImgH1 from '@/image/thiep/h_2.png';
 
-const LIST_AOS_RIGHT = [
-  'zoom-out-right',
-  'fade-up',
-  'fade-right',
-  'fade-up-right',
-  'fade-down-right',
-  'flip-left',
-  'zoom-in',
-  'zoom-in-down',
-  'zoom-in-right',
-  'zoom-out-up',
-  'zoom-out-right',
-];
-const LIST_AOS_LEFT = [
-  'zoom-out-left',
-  'fade-down',
-  'fade-left',
-  'fade-up-left',
-  'fade-down-left',
-  'flip-right',
-  'flip-down',
-  'zoom-in-up',
-  'zoom-in-left',
-  'zoom-out',
-  'zoom-out-down',
-  'zoom-out-left',
-];
+// const LIST_AOS_RIGHT = [
+//   'zoom-out-right',
+//   'fade-up',
+//   'fade-right',
+//   'fade-up-right',
+//   'fade-down-right',
+//   'flip-left',
+//   'zoom-in',
+//   'zoom-in-down',
+//   'zoom-in-right',
+//   'zoom-out-up',
+//   'zoom-out-right',
+// ];
+// const LIST_AOS_LEFT = [
+//   'zoom-out-left',
+//   'fade-down',
+//   'fade-left',
+//   'fade-up-left',
+//   'fade-down-left',
+//   'flip-right',
+//   'flip-down',
+//   'zoom-in-up',
+//   'zoom-in-left',
+//   'zoom-out',
+//   'zoom-out-down',
+//   'zoom-out-left',
+// ];
 
 function MyApp() {
   useEffect(() => {
     initializeAOS(); // Khởi tạo AOS khi ứng dụng bắt đầu chạy
   }, []);
 
-  const min = 0;
-  const max = 11;
+  // const min = 0;
+  // const max = 11;
 
-  const dataContent = [
-    {
-      imageContent: ImgBg,
-    },
-    {
-      imageContent: ImgBg,
-    },
-    {
-      imageContent: ImgBg,
-    },
-    {
-      imageContent: ImgBg,
-    },
-    {
-      imageContent: ImgBg,
-    },
-    {
-      imageContent: ImgBg,
-    },
-  ];
+  // const dataContent = [
+  //   {
+  //     imageContent: ImgBg,
+  //   },
+  //   {
+  //     imageContent: ImgBg,
+  //   },
+  //   {
+  //     imageContent: ImgBg,
+  //   },
+  //   {
+  //     imageContent: ImgBg,
+  //   },
+  //   {
+  //     imageContent: ImgBg,
+  //   },
+  //   {
+  //     imageContent: ImgBg,
+  //   },
+  // ];
   return (
     <div className='flex min-h-[100vh] w-[100%] flex-col items-center overflow-x-hidden bg-[#F5F2F7]'>
       <Seo />
@@ -95,7 +91,7 @@ function MyApp() {
             className='h-[70px] w-auto sm:h-[35px]'
           />
         </div>
-        <div className='flex flex-col gap-[48px] py-[48px] md:gap-[24px] md:py-[24px]'>
+        {/* <div className='flex flex-col gap-[48px] py-[48px] md:gap-[24px] md:py-[24px]'>
           {dataContent.map((item, index) => {
             return (
               <Content
@@ -115,7 +111,7 @@ function MyApp() {
               />
             );
           })}
-        </div>
+        </div> */}
         <div className='flex w-[100%] justify-center' data-aos='zoom-out'>
           <Image
             src={ImgH2}

@@ -6,8 +6,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Roboto', ...defaultTheme.fontFamily.sans],
+        primary: ['TikTokText-Regular', ...defaultTheme.fontFamily.sans],
         secondary: 'Lovely Valentine Sans',
+        secondary_1: 'SVN-Daisy Lau',
+        secondary_2: 'DancingScript',
       },
       colors: {
         primary: {

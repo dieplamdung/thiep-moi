@@ -33,7 +33,7 @@ export default function ContentHeader() {
         <div data-aos='fade-right'>
           <Typography
             variant='h1'
-            className='text-center text-[58px] leading-none md:text-[28px]'
+            className='text-center font-secondary_2 text-[58px] leading-none md:text-[28px]'
           >
             Văn Thêm
           </Typography>
@@ -41,15 +41,15 @@ export default function ContentHeader() {
         <div data-aos='zoom-in'>
           <Typography
             variant='h3'
-            className='my-[24px] text-center md:my-[8px]'
+            className='my-[24px] text-center font-secondary_2 text-[red] md:my-[8px]'
           >
-            &&&
+            ♥♥♥
           </Typography>
         </div>
         <div data-aos='fade-left'>
           <Typography
             variant='h1'
-            className='text-center text-[58px] leading-none md:text-[28px]'
+            className='text-center font-secondary_2 text-[58px] leading-none md:text-[28px]'
           >
             Tuyết Trinh
           </Typography>

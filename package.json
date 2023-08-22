@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "storybook build && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint .eslintrc.js --fix",
     "lint:fix": "eslint src --fix && yarn format",

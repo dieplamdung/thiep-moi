@@ -23,16 +23,11 @@ import IMG12 from '@/image/thiep/2.png';
 //   ),
 // };
 const DATA = {
-  time: '12h00, Thứ Tư',
+  time: '11h00, Thứ Tư',
   day: '20 | 09 | 2023',
-  day_am: '(Tức ngày 06 tháng 08 năm Quý Mão)',
-  diaChiTop: 'TẠI TƯ GIA NHÀ TRAI',
-  diaChiBottom: (
-    <>
-      THÔN BÌNH HÒA, XÃ AN DÂN, HUYỆN TUY AN,
-      <br /> TỈNH PHÚ YÊN
-    </>
-  ),
+  day_am: <>(Nhằm ngày 06 tháng 08 năm Quý Mão)</>,
+  diaChiTop: 'TẠI TƯ GIA',
+  diaChiBottom: <>BÌNH HÒA - AN DÂN - TUY AN - PHÚ YÊN</>,
 };
 
 const POSITION: any = {
@@ -40,10 +35,46 @@ const POSITION: any = {
   c: 'Chị',
   b: 'Bạn',
   e: 'Em',
+  t: 'Thầy',
 };
 const NAME: any = {
   hao: 'Hảo +',
+  trung: 'Trung +',
+  nguyet: 'Nguyệt +',
+  anh: 'Ánh +',
+  bich: 'Bích +',
+  phu: 'Phú +',
+  khanh: 'Khánh +',
+  tuan: 'Tuấn +',
+  thong: 'Thông',
+  an: 'Ẩn +',
   y: 'Yêu',
+  men: 'Mến +',
+  trong: 'Trọng +',
+  hieu: 'Hiếu +',
+  my: 'My +',
+  diemqn: 'Diễm +',
+  lieuqn: 'Liễu +',
+  minh: 'Minh +',
+  bao: 'Bảo +',
+  cao: 'Cao +',
+  huy12g: 'Huy +',
+  hao12g: 'Hào +',
+  thu: 'Thư +',
+  thang: 'Thắng +',
+  loan: 'Loan +',
+  thiet: 'Thiết +',
+  kiet: 'Kiệt +',
+  khoa12g: 'Khoa +',
+  duong12g: 'Dưỡng +',
+  hoai12g: 'Hoài +',
+  lieu12g: 'Liễu +',
+  diem12g: 'Diễm +',
+  giangqn: 'Giang + Chị Thùy',
+  phuong12g: 'Phương +',
+  nguyejt12g: 'Nguyệt +',
+  huong: 'Hương +',
+  em: 'Vợ Chồng em',
 };
 
 export default function ContentThiep() {
@@ -54,9 +85,13 @@ export default function ContentThiep() {
 
   useEffect(() => {
     const p: string = (query?.p as string) || 'b';
+    // eslint-disable-next-line no-console
+    console.log('==', p);
     const t: string = (query?.t as string) || 'y';
 
     const pos = POSITION[p];
+    // eslint-disable-next-line no-console
+    console.log('pos', pos);
     const newName = NAME[t] || '';
 
     setPosition(pos);
@@ -71,53 +106,49 @@ export default function ContentThiep() {
         <div className=' flex max-w-[50%] justify-center md:max-w-[100%]'>
           <div className='relative'>
             <StyleImage
-              src={IMG11}
+              src={IMG12}
               alt=''
-              className='h-[100%] w-[100%] md:max-w-[480px]'
+              className='h-[100%]  w-[100%] md:max-w-[480px]'
             />
             <WrapperContentImg1>
-              <Typography variant='b1r'>TRÂN TRỌNG KÍNH MỜI !</Typography>
               <Typography
-                variant='h3r'
-                className={clsxm('my-[12px] sm:my-[8px]')}
+                variant='h2'
+                className='font-secondary_2 text-[#727204] sm:text-[20px] sm:leading-[30px]'
               >
-                {`${position} ${name}`}
+                Lễ Thành Hôn
               </Typography>
-              <Typography variant='b2m' className='mb-[8px] text-center'>
-                Đến dự bữa tiệc thân mật chung vui cùng gia đình chúng tôi
+
+              <Typography
+                variant='h2'
+                className='mt-[18px] font-secondary_2 text-[#ff3838] sm:mt-[12px]'
+              >
+                Võ Văn Thêm
               </Typography>
+              <div className='mb-[4px] text-[#ff3838]'>♥</div>
+              <Typography
+                variant='h2'
+                className='font-secondary_2 text-[#ff3838]'
+              >
+                Trần Thị Tuyết Trinh
+              </Typography>
+
               <Typography
                 variant='b2m'
-                className='mt-[12px] text-center text-primary-magenta sm:mt-[8px]'
+                className='mt-[12px] text-center text-primary-magenta sm:mt-[8px] sm:text-[12px]'
               >
                 Được tổ chức vào lúc {DATA.time}
               </Typography>
               <Typography
                 variant='h3'
-                className='text-center text-primary-magenta'
+                className='text-center text-primary-magenta sm:text-[14px]'
               >
                 {DATA.day}
               </Typography>
               <Typography
                 variant='b2m'
-                className='mb-[12px] text-center sm:mb-[8px] '
+                className='mb-[12px] text-center leading-[16px] sm:mb-[8px] sm:text-[12px]'
               >
                 {DATA.day_am}
-              </Typography>
-
-              <Typography variant='b1' className='mb-[4px] text-center '>
-                {DATA.diaChiTop}
-              </Typography>
-              <Typography variant='b1' className='mb-[4px] text-center '>
-                {DATA.diaChiBottom}
-              </Typography>
-
-              <Typography
-                variant='b2m'
-                className='mt-[12px] text-center sm:mt-[8px] '
-              >
-                Sự hiện diện của quý khách là niềm vinh hạnh của gia đình chúng
-                tôi!
               </Typography>
             </WrapperContentImg1>
           </div>
@@ -125,32 +156,66 @@ export default function ContentThiep() {
         <div className='flex justify-center'>
           <div className='relative'>
             <StyleImage
-              src={IMG12}
+              src={IMG11}
               alt=''
-              className='h-[100%]  w-[100%] md:max-w-[480px]'
+              className='h-[100%] w-[100%] md:max-w-[480px]'
             />
             <WrapperContentImg2>
-              <Typography variant='b1r' className={clsxm('font-primary')}>
-                THE WEDDING OF
+              <Typography
+                variant='h3r'
+                className='font-secondary_2 text-[26px] leading-[30px] sm:text-[20px]'
+              >
+                Trân trọng kính mời
               </Typography>
-              <div className='mt-[24px] sm:mt-[12px]'>
-                <Typography variant='h1' className={clsxm('font-primary')}>
-                  SAVE
-                </Typography>
-                <Typography
-                  variant='b1r'
-                  className={clsxm('text-right font-primary')}
-                >
-                  THE
-                </Typography>
-                <Typography variant='h1' className={clsxm('font-primary')}>
-                  DATE
-                </Typography>
-              </div>
-              <Typography variant='b1r' className='my-[12px] sm:my-[4px]'>
-                Van Them & Tuyet Trnh
+              <Name
+                variant='h3r'
+                className={clsxm(
+                  'my-[12px] font-secondary_2 text-[34px] leading-[40px] sm:my-[8px] sm:text-[24px] sm:leading-[30px]'
+                )}
+              >
+                {`${position} ${name}`}
+              </Name>
+              <Typography variant='b2m' className='mb-[8px] text-center'>
+                Đến dự bữa tiệc chung vui cùng gia đình chúng tôi.
               </Typography>
-              <div className='mt-[12px] flex items-center justify-center sm:mt-[8px]'>
+              <Typography
+                variant='b1'
+                className='mb-[4px] text-center leading-[20px]'
+              >
+                {DATA.diaChiTop}
+              </Typography>
+              <Typography
+                variant='b1'
+                className='mb-[4px] text-center leading-[20px]'
+              >
+                {DATA.diaChiBottom}
+              </Typography>
+              <Typography
+                variant='b2m'
+                className='mt-[12px] text-center text-primary-magenta sm:mt-[8px]'
+              >
+                Được tổ chức vào lúc 12h00, Thứ Tư
+              </Typography>
+              <Typography
+                variant='h3'
+                className='text-center leading-[20px] text-primary-magenta '
+              >
+                {DATA.day}
+              </Typography>
+              <Typography
+                variant='b2m'
+                className='mb-[12px] text-center sm:mb-[8px] sm:text-[12px]'
+              >
+                {DATA.day_am}
+              </Typography>
+              <Typography
+                variant='b2m'
+                className='mt-[12px] text-center font-secondary_2 text-[18px] leading-[24px] sm:mt-[8px] sm:text-[14px] sm:leading-[20px]'
+              >
+                Sự hiện diện của {position} là niềm vinh hạnh <br /> của gia
+                đình chúng tôi!
+              </Typography>
+              {/* <div className='mt-[12px] flex items-center justify-center sm:mt-[8px]'>
                 <Typography variant='b1'>T.09</Typography>
                 <Line />
                 <div className='flex flex-col items-center justify-center'>
@@ -159,7 +224,7 @@ export default function ContentThiep() {
                 </div>
                 <Line />
                 <Typography variant='b1'>2023</Typography>
-              </div>
+              </div> */}
             </WrapperContentImg2>
           </div>
         </div>
@@ -174,13 +239,6 @@ const StyleImage = styled(Image)`
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px;
 `;
 
-const Line = styled.div`
-  height: 60%;
-  width: 1px;
-  background: #9299a0;
-  margin: 0px 8px;
-`;
-
 const WrapperContentImg1 = styled.div`
   top: 0px;
   position: absolute;
@@ -189,11 +247,11 @@ const WrapperContentImg1 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 120px 48px 0px;
   z-index: 2;
+  padding: 184px 48px 0px;
 
   @media (max-width: 640px) {
-    padding: 60px 40px 0px;
+    padding: 130px 40px 0px;
   }
 `;
 
@@ -204,12 +262,17 @@ const WrapperContentImg2 = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 0px 48px;
   z-index: 2;
+  padding: 110px 48px 0px;
 
   @media (max-width: 640px) {
-    padding: 0px 40px;
+    padding: 60px 40px 0px;
   }
+`;
+
+const Name = styled(Typography)`
+  background: -webkit-linear-gradient(90deg, #7ef29d, #210cae);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;

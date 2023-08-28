@@ -220,9 +220,13 @@ export default function ContentThiep() {
                 variant='b1'
                 className='mb-[4px] text-center leading-[20px]'
               >
-                {lang === 'vn'
-                  ? DATA.diaChiBottom
-                  : 'BINH HOA - AN DAN - TUY AN - PHU YEN - VIET NAM'}
+                {lang === 'vn' ? (
+                  DATA.diaChiBottom
+                ) : (
+                  <>
+                    BINH HOA - AN DAN - TUY AN - PHU YEN <br /> VIET NAM
+                  </>
+                )}
               </Typography>
               <Typography
                 variant='b2m'

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 import { styled } from 'styled-components';
 
@@ -16,9 +17,16 @@ export default function TimeEnd() {
     minutes: 0,
     seconds: 0,
   });
+  const [lang, setLang] = useState<string>('vn');
+  const { query } = useRouter();
   const [hasUserInteracted, setHasUserInteracted] = useState<boolean>(false);
   const fistClick = useRef<boolean>(false);
   const audioRef = useRef<any>(null);
+
+  useEffect(() => {
+    const lng: string = (query?.lng as string) || 'vn';
+    setLang(lng);
+  }, [query]);
 
   useEffect(() => {
     audioRef.current.volume = 0.5;
@@ -105,7 +113,7 @@ export default function TimeEnd() {
         target='_blank'
         className='mt-[12px]'
       >
-        Địa điểm tiệc
+        {lang === 'vn' ? 'Địa điểm tiệc' : 'Party Venue'}
       </TextLink>
 
       <audio controls ref={audioRef} className='hidden' loop>

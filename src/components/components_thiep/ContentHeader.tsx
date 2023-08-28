@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import clsxm from '@/lib/clsxm';
@@ -12,6 +13,14 @@ import ImgT1 from '@/image/thiep/t_1.png';
 import ImgT2 from '@/image/thiep/t_2.png';
 
 export default function ContentHeader() {
+  const [lang, setLang] = useState<string>('vn');
+  const { query } = useRouter();
+
+  useEffect(() => {
+    const lng: string = (query?.lng as string) || 'vn';
+    setLang(lng);
+  }, [query]);
+
   return (
     <>
       <StyleHeader className={clsxm('w-[100%]')}>
@@ -35,7 +44,7 @@ export default function ContentHeader() {
             variant='h1'
             className='text-center font-secondary_2 text-[58px] leading-none md:text-[28px]'
           >
-            Văn Thêm
+            {lang === 'vn' ? 'Văn Thêm' : 'Van Them'}
           </Typography>
         </div>
         <div data-aos='zoom-in'>
@@ -51,7 +60,7 @@ export default function ContentHeader() {
             variant='h1'
             className='text-center font-secondary_2 text-[58px] leading-none md:text-[28px]'
           >
-            Tuyết Trinh
+            {lang === 'vn' ? 'Tuyết Trinh' : 'Tuyet Trinh'}
           </Typography>
         </div>
       </StyleWrapperName>
@@ -80,7 +89,7 @@ export default function ContentHeader() {
             className='mx-[12px] text-center font-secondary font-[400]'
             spacing='1.5px'
           >
-            Thiệp Mời
+            {lang === 'vn' ? 'Thiệp Mời' : 'Ivitation cards'}
           </Typography>
         </div>
         <div data-aos='fade-left'>

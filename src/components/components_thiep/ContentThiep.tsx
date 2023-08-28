@@ -82,6 +82,9 @@ const NAME: any = {
   tuong12g: 'Tường +',
   vien12g: 'Viên +',
   nich: 'Nich +',
+  vi: 'Vi +',
+  hungxom: 'Hưng +',
+  yenxom: 'Yến +',
 };
 
 const CONTENT: any = {

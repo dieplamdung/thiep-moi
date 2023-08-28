@@ -36,58 +36,86 @@ const POSITION: any = {
   b: 'Bạn',
   e: 'Em',
   t: 'Thầy',
+  none: '',
 };
 const NAME: any = {
-  hao: 'Hảo +',
-  trung: 'Trung +',
-  nguyet: 'Nguyệt +',
-  anh: 'Ánh +',
+  hao: 'Hảo +', //
+  trung: 'Trung +', // đã gửi
+  nguyet: 'Nguyệt +', // đã gửi
+  anh: 'Ánh +', // đã gửi
   bich: 'Bích +',
-  phu: 'Phú +',
-  khanh: 'Khánh +',
-  tuan: 'Tuấn +',
+  phu: 'Phú +', // đã gửi
+  khanh: 'Khánh +', //
+  tuan: 'Tuấn +', //
   thong: 'Thông',
-  an: 'Ẩn +',
+  an: 'Ẩn +', //
   y: 'Yêu',
   men: 'Mến +',
-  trong: 'Trọng +',
-  hieu: 'Hiếu +',
-  my: 'My +',
-  diemqn: 'Diễm +',
-  lieuqn: 'Liễu +',
+  trong: 'Trọng +', //
+  hieu: 'Hiếu +', //
+  my: 'My +', //
+  diemqn: 'Diễm +', //
+  lieuqn: 'Liễu +', //
   minh: 'Minh +',
   bao: 'Bảo +',
-  cao: 'Cao +',
-  huy12g: 'Huy +',
-  hao12g: 'Hào +',
-  thu: 'Thư +',
+  cao: 'Cao +', //
+  huy9e: 'Huy +', //
+  hao12g: 'Hào +', //
+  thu: 'Thư +', // đã gửi
   thang: 'Thắng +',
   loan: 'Loan +',
-  thiet: 'Thiết +',
-  kiet: 'Kiệt +',
-  khoa12g: 'Khoa +',
-  duong12g: 'Dưỡng +',
-  hoai12g: 'Hoài +',
+  thiet12g: 'Thiết +', //
+  kiet12g: 'Kiệt +', //
+  khoa12g: 'Khoa +', //
+  duong12g: 'Dưỡng +', //
+  hoai12g: 'Hoài +', //
   lieu12g: 'Liễu +',
-  diem12g: 'Diễm +',
+  diem12g: 'Diễm +', //
   giangqn: 'Giang + Chị Thùy',
-  phuong12g: 'Phương +',
+  phuong12g: 'Phương +', //
   nguyejt12g: 'Nguyệt +',
   huong: 'Hương +',
-  em: 'Vợ Chồng em',
+  vcem: 'Vợ Chồng em',
+  vcchi: 'Vợ Chồng Chị',
+  vcanh: 'Vợ Chồng Anh',
+  linh: 'Linh +',
+  tuong12g: 'Tường +',
+  vien12g: 'Viên +',
+  nich: 'Nich +',
+};
+
+const CONTENT: any = {
+  vn: {
+    lth: 'Lễ Thành Hôn',
+    nam: 'Võ Văn Thêm',
+    nu: 'Trần Thị Tuyết Trinh',
+    kinhmoi: 'Trân trọng kính mời',
+    dendutiec: 'Đến dự bữa tiệc chung vui cùng gia đình chúng tôi.',
+  },
+  en: {
+    lth: 'Wedding',
+    nam: 'Vo Van Them',
+    nu: 'Tran Thi Tuyet Trinh',
+    kinhmoi: 'Cordially invited',
+    dendutiec: 'Come to the party with our family.',
+  },
 };
 
 export default function ContentThiep() {
   const [name, setName] = useState<string>('');
-  const [position, setPosition] = useState<string>('Bạn');
+  const [position, setPosition] = useState<string>('');
+  const [lang, setLang] = useState<string>('vn');
 
   const { query } = useRoute();
 
   useEffect(() => {
-    const p: string = (query?.p as string) || 'b';
+    const p: string = (query?.p as string) || 'none';
     // eslint-disable-next-line no-console
     console.log('==', p);
     const t: string = (query?.t as string) || 'y';
+
+    const lng: string = (query?.lng as string) || 'vn';
+    setLang(lng);
 
     const pos = POSITION[p];
     // eslint-disable-next-line no-console
@@ -115,28 +143,30 @@ export default function ContentThiep() {
                 variant='h2'
                 className='font-secondary_2 text-[#727204] sm:text-[20px] sm:leading-[30px]'
               >
-                Lễ Thành Hôn
+                {CONTENT[lang].lth}
               </Typography>
 
               <Typography
                 variant='h2'
                 className='mt-[18px] font-secondary_2 text-[#ff3838] sm:mt-[12px]'
               >
-                Võ Văn Thêm
+                {CONTENT[lang].nam}
               </Typography>
               <div className='mb-[4px] text-[#ff3838]'>♥</div>
               <Typography
                 variant='h2'
                 className='font-secondary_2 text-[#ff3838]'
               >
-                Trần Thị Tuyết Trinh
+                {CONTENT[lang].nu}
               </Typography>
 
               <Typography
                 variant='b2m'
                 className='mt-[12px] text-center text-primary-magenta sm:mt-[8px] sm:text-[12px]'
               >
-                Được tổ chức vào lúc {DATA.time}
+                {lang === 'vn'
+                  ? `Được tổ chức vào lúc ${DATA.time}`
+                  : 'Held at 11:00, Wednesday'}
               </Typography>
               <Typography
                 variant='h3'
@@ -144,12 +174,14 @@ export default function ContentThiep() {
               >
                 {DATA.day}
               </Typography>
-              <Typography
-                variant='b2m'
-                className='mb-[12px] text-center leading-[16px] sm:mb-[8px] sm:text-[12px]'
-              >
-                {DATA.day_am}
-              </Typography>
+              {lang === 'vn' && (
+                <Typography
+                  variant='b2m'
+                  className='mb-[12px] text-center leading-[16px] sm:mb-[8px] sm:text-[12px]'
+                >
+                  {DATA.day_am}
+                </Typography>
+              )}
             </WrapperContentImg1>
           </div>
         </div>
@@ -165,7 +197,7 @@ export default function ContentThiep() {
                 variant='h3r'
                 className='font-secondary_2 text-[26px] leading-[30px] sm:text-[20px]'
               >
-                Trân trọng kính mời
+                {CONTENT[lang].kinhmoi}
               </Typography>
               <Name
                 variant='h3r'
@@ -176,25 +208,29 @@ export default function ContentThiep() {
                 {`${position} ${name}`}
               </Name>
               <Typography variant='b2m' className='mb-[8px] text-center'>
-                Đến dự bữa tiệc chung vui cùng gia đình chúng tôi.
+                {CONTENT[lang].dendutiec}
               </Typography>
               <Typography
                 variant='b1'
                 className='mb-[4px] text-center leading-[20px]'
               >
-                {DATA.diaChiTop}
+                {lang === 'vn' ? DATA.diaChiTop : 'AT HOUSE'}
               </Typography>
               <Typography
                 variant='b1'
                 className='mb-[4px] text-center leading-[20px]'
               >
-                {DATA.diaChiBottom}
+                {lang === 'vn'
+                  ? DATA.diaChiBottom
+                  : 'BINH HOA - AN DAN - TUY AN - PHU YEN - VIET NAM'}
               </Typography>
               <Typography
                 variant='b2m'
                 className='mt-[12px] text-center text-primary-magenta sm:mt-[8px]'
               >
-                Được tổ chức vào lúc 12h00, Thứ Tư
+                {lang === 'vn'
+                  ? 'Được tổ chức vào lúc 12h00, Thứ Tư'
+                  : 'Held at 12:00 am, Wednesday'}
               </Typography>
               <Typography
                 variant='h3'
@@ -202,18 +238,29 @@ export default function ContentThiep() {
               >
                 {DATA.day}
               </Typography>
-              <Typography
-                variant='b2m'
-                className='mb-[12px] text-center sm:mb-[8px] sm:text-[12px]'
-              >
-                {DATA.day_am}
-              </Typography>
+              {lang === 'vn' && (
+                <Typography
+                  variant='b2m'
+                  className='mb-[12px] text-center sm:mb-[8px] sm:text-[12px]'
+                >
+                  {DATA.day_am}
+                </Typography>
+              )}
               <Typography
                 variant='b2m'
                 className='mt-[12px] text-center font-secondary_2 text-[18px] leading-[24px] sm:mt-[8px] sm:text-[14px] sm:leading-[20px]'
               >
-                Sự hiện diện của {position} là niềm vinh hạnh <br /> của gia
-                đình chúng tôi!
+                {lang === 'vn' ? (
+                  <>
+                    Sự hiện diện của {position} là niềm vinh hạnh <br /> của gia
+                    đình chúng tôi!
+                  </>
+                ) : (
+                  <>
+                    The presence of {name} is the honor <br /> of the family our
+                    family!
+                  </>
+                )}
               </Typography>
               {/* <div className='mt-[12px] flex items-center justify-center sm:mt-[8px]'>
                 <Typography variant='b1'>T.09</Typography>

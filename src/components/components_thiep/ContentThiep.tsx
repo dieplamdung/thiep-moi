@@ -86,6 +86,8 @@ const NAME: any = {
   hungxom: 'Hưng +',
   yenxom: 'Yến +',
   tungit: 'Tùng +',
+  nhung: 'Nhung +',
+  phung: 'Phụng +',
 };
 
 const CONTENT: any = {

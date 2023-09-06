@@ -260,8 +260,8 @@ export default function ContentThiep() {
               >
                 {lang === 'vn' ? (
                   <>
-                    Sự hiện diện của {position} là niềm vinh hạnh <br /> của gia
-                    đình chúng tôi!
+                    Sự hiện diện của {position || name} là niềm vinh hạnh <br />{' '}
+                    của gia đình chúng tôi!
                   </>
                 ) : (
                   <>

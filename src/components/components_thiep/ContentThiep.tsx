@@ -71,7 +71,7 @@ const NAME: any = {
   hoai12g: 'Hoài +', //
   lieu12g: 'Liễu +',
   diem12g: 'Diễm +', //
-  giangqn: 'Giang + Chị Thùy',
+  giangqn: 'Anh Giang + Chị Thùy',
   phuong12g: 'Phương +', //
   nguyejt12g: 'Nguyệt +',
   huong: 'Hương +',

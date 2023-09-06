@@ -85,6 +85,7 @@ const NAME: any = {
   vi: 'Vi +',
   hungxom: 'Hưng +',
   yenxom: 'Yến +',
+  tungit: 'Tùng +',
 };
 
 const CONTENT: any = {
@@ -236,8 +237,8 @@ export default function ContentThiep() {
                 className='mt-[12px] text-center text-primary-magenta sm:mt-[8px]'
               >
                 {lang === 'vn'
-                  ? 'Được tổ chức vào lúc 12h00, Thứ Tư'
-                  : 'Held at 12:00 am, Wednesday'}
+                  ? 'Được tổ chức vào lúc 11h30, Thứ Tư'
+                  : 'Held at 11h30 am, Wednesday'}
               </Typography>
               <Typography
                 variant='h3'

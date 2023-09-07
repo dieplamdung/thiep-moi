@@ -89,6 +89,7 @@ const NAME: any = {
   nhung: 'Nhung +',
   phung: 'Phụng +',
   sen12g: 'Sen +',
+  hoa12g: 'Hoa +',
 };
 
 const CONTENT: any = {

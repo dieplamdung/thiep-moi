@@ -89,7 +89,7 @@ export default function ContentHeader() {
             className='mx-[12px] text-center font-secondary font-[400]'
             spacing='1.5px'
           >
-            {lang === 'vn' ? 'Thiệp Mời' : 'Ivitation cards'}
+            {lang === 'vn' ? 'Thiệp Báo Hỷ' : 'Ivitation cards'}
           </Typography>
         </div>
         <div data-aos='fade-left'>

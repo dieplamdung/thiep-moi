@@ -8,6 +8,7 @@ type PropsContent = {
   aosLeft?: string;
   positionImage?: string;
   imageContent?: any;
+  description?: any;
 };
 
 export default function Content(props: PropsContent) {
@@ -16,6 +17,7 @@ export default function Content(props: PropsContent) {
     aosLeft,
     positionImage = 'right',
     imageContent = '',
+    description,
   } = props;
 
   const [isClient, setIsClient] = useState<boolean>(false);
@@ -41,14 +43,14 @@ export default function Content(props: PropsContent) {
             <StyleImage
               src={imageContent}
               alt='hinh_anh'
-              className='aspect-video'
+              className='aspect-auto'
             />
           </StyleWrapperImage>
           <div
-            className='w-[100%]'
+            className='flex w-[100%] flex-col justify-center text-center text-[16px] sm:text-[14px] '
             data-aos={positionImage === 'left' ? aosRight : aosLeft}
           >
-            dfdf
+            {description}
           </div>
         </div>
       ) : (

@@ -1,8 +1,8 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 
-import clsxm from '@/lib/clsxm';
 import useRoute from '@/lib/hooks/useRouter';
 
 import Typography from '@/components/atoms/typography/Typography';
@@ -10,24 +10,16 @@ import Typography from '@/components/atoms/typography/Typography';
 import IMG11 from '@/image/thiep/1.png';
 import IMG12 from '@/image/thiep/2.png';
 
-// const DATA = {
-//   time: '08h00, Thứ Tư',
-//   day: '20 | 09 | 2023',
-//   day_am: '(Tức ngày 06 tháng 08 năm Quý Mão)',
-//   diaChiTop: 'TẠI TƯ GIA',
-//   diaChiBottom: (
-//     <>
-//       THÔN DÕNG HÒA, XÃ BÌNH HÒA, H.TÂY SƠN,
-//       <br /> TỈNH BÌNH ĐỊNH
-//     </>
-//   ),
-// };
 const DATA = {
-  time: '11h00, Thứ Tư',
-  day: '20 | 09 | 2023',
-  day_am: <>(Nhằm ngày 06 tháng 08 năm Quý Mão)</>,
-  diaChiTop: 'TẠI TƯ GIA',
-  diaChiBottom: <>BÌNH HÒA - AN DÂN - TUY AN - PHÚ YÊN</>,
+  time: '18h00, Thứ Bảy',
+  day: '11 | 11 | 2023',
+  day_am: <>(Nhằm ngày 28 tháng 09 năm Quý Mão)</>,
+  diaChiTop: (
+    <>
+      NHÀ HÀNG VƯỜN QUÊ <br /> Sảnh tiêc: Bằng Lăng
+    </>
+  ),
+  diaChiBottom: <>38 Đường số 5, P.25, Bình Thạnh - HCM</>,
 };
 
 const POSITION: any = {
@@ -38,6 +30,7 @@ const POSITION: any = {
   t: 'Thầy',
   none: '',
 };
+
 const NAME: any = {
   hao: 'Hảo +', //
   trung: 'Trung +', // đã gửi
@@ -94,10 +87,10 @@ const NAME: any = {
 
 const CONTENT: any = {
   vn: {
-    lth: 'Lễ Thành Hôn',
+    lth: 'Lễ Báo Hỷ',
     nam: 'Võ Văn Thêm',
     nu: 'Trần Thị Tuyết Trinh',
-    kinhmoi: 'Trân trọng kính mời',
+    kinhmoi: 'Được tổ chức tại:',
     dendutiec: 'Đến dự bữa tiệc chung vui cùng gia đình chúng tôi.',
   },
   en: {
@@ -119,7 +112,7 @@ export default function ContentThiep() {
   useEffect(() => {
     const p: string = (query?.p as string) || 'none';
     // eslint-disable-next-line no-console
-    console.log('==', p);
+    // console.log('==', p);
     const t: string = (query?.t as string) || 'y';
 
     const lng: string = (query?.lng as string) || 'vn';
@@ -127,7 +120,7 @@ export default function ContentThiep() {
 
     const pos = POSITION[p];
     // eslint-disable-next-line no-console
-    console.log('pos', pos);
+    // console.log('pos', pos);
     const newName = NAME[t] || '';
 
     setPosition(pos);
@@ -207,26 +200,26 @@ export default function ContentThiep() {
               >
                 {CONTENT[lang].kinhmoi}
               </Typography>
-              <Name
+              {/* <Name
                 variant='h3r'
                 className={clsxm(
                   'my-[12px] font-secondary_2 text-[34px] leading-[40px] sm:my-[8px] sm:text-[24px] sm:leading-[30px]'
                 )}
               >
                 {`${position} ${name}`}
-              </Name>
-              <Typography variant='b2m' className='mb-[8px] text-center'>
+              </Name> */}
+              {/* <Typography variant='b2m' className='mb-[8px] text-center'>
                 {CONTENT[lang].dendutiec}
-              </Typography>
+              </Typography> */}
               <Typography
                 variant='b1'
-                className='mb-[4px] text-center leading-[20px]'
+                className='mb-[8px]  mt-[12px] text-center text-[24px] leading-[120%] text-[red] sm:text-[18px]'
               >
                 {lang === 'vn' ? DATA.diaChiTop : 'AT HOUSE'}
               </Typography>
               <Typography
                 variant='b1'
-                className='mb-[4px] text-center leading-[20px]'
+                className='mb-[4px] text-center leading-[20px] sm:text-[14px]'
               >
                 {lang === 'vn' ? (
                   DATA.diaChiBottom
@@ -236,15 +229,15 @@ export default function ContentThiep() {
                   </>
                 )}
               </Typography>
-              <Typography
+              {/* <Typography
                 variant='b2m'
                 className='mt-[12px] text-center text-primary-magenta sm:mt-[8px]'
               >
                 {lang === 'vn'
                   ? 'Được tổ chức vào lúc 11h30, Thứ Tư'
                   : 'Held at 11h30 am, Wednesday'}
-              </Typography>
-              <Typography
+              </Typography> */}
+              {/* <Typography
                 variant='h3'
                 className='text-center leading-[20px] text-primary-magenta '
               >
@@ -257,15 +250,15 @@ export default function ContentThiep() {
                 >
                   {DATA.day_am}
                 </Typography>
-              )}
+              )} */}
               <Typography
                 variant='b2m'
                 className='mt-[12px] text-center font-secondary_2 text-[18px] leading-[24px] sm:mt-[8px] sm:text-[14px] sm:leading-[20px]'
               >
                 {lang === 'vn' ? (
                   <>
-                    Sự hiện diện của {position || name} là niềm vinh hạnh <br />{' '}
-                    của gia đình chúng tôi!
+                    Sự hiện diện Quý khách là niềm vinh hạnh <br /> của gia đình
+                    chúng tôi!
                   </>
                 ) : (
                   <>
@@ -323,11 +316,12 @@ const WrapperContentImg2 = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 2;
-  padding: 110px 48px 0px;
+  justify-content: center;
+  /* padding: 110px 48px 0px; */
 
-  @media (max-width: 640px) {
+  /* @media (max-width: 640px) {
     padding: 60px 40px 0px;
-  }
+  } */
 `;
 
 const Name = styled(Typography)`

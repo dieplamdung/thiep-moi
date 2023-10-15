@@ -10,7 +10,7 @@ import IconPlayAudio from '@/image/icon-playing.gif';
 import IconPlay from '@/image/play-button.png';
 
 export default function TimeEnd() {
-  const targetDate = new Date('2023-09-20').getTime();
+  const targetDate = new Date('2023-11-11').getTime();
   const [timeRemaining, setTimeRemaining] = useState<any>({
     days: 0,
     hours: 0,
@@ -101,7 +101,7 @@ export default function TimeEnd() {
         variant='b2m'
         className='text-center font-secondary_2 text-[16px]'
       >
-        Time end
+        Cùng đếm ngược thời gian nào:
       </Typography>
       <Typography variant='text' className='font-secondary_2 text-[14px]'>
         {timeRemaining.days} days {`0${timeRemaining.hours}`.slice(-2)} hours{' '}
@@ -109,7 +109,7 @@ export default function TimeEnd() {
         {`0${timeRemaining.seconds}`.slice(-2)} seconds
       </Typography>
       <TextLink
-        href='https://www.google.com/maps/search/b%C3%ACnh+h%C3%B2a+an+d%C3%A2n+tuy+an+ph%C3%BA+y%C3%AAn/@13.3346358,109.2148624,19.99z?entry=ttu'
+        href='https://www.google.com/maps/place/Nh%C3%A0+h%C3%A0ng+V%C6%B0%E1%BB%9Dn+Qu%C3%AA/@10.8058056,106.7136305,19.95z/data=!4m6!3m5!1s0x317528a33e1df8b1:0x60095933115de65e!8m2!3d10.8060219!4d106.7138365!16s%2Fg%2F12nqgnrtb?entry=ttu'
         target='_blank'
         className='mt-[12px]'
       >

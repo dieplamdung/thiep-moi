@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'THIỆP MỜI',
-  siteName: 'THIỆP MỜI',
+  title: 'THIỆP BÁO HỶ',
+  siteName: 'THIỆP BÁO HỶ',
   description: '',
   url: 'https://tsnext-tw.thcl.dev',
   type: 'website',

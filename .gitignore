@@ -14,7 +14,7 @@
 
 # production
 /build
-
+/storybook-static
 # misc
 .DS_Store
 *.pem
@@ -43,3 +43,18 @@ sitemap-*.xml
 
 # Jetbrains IDE
 .idea/*
+
+# Yarn v3
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+#Custom B2C Teanant Template
+src/components/layout/custom-ui-login-b2c/minify
+
+# local env files
+.env.*

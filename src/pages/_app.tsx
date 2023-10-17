@@ -10,10 +10,22 @@ import initializeAOS from '@/lib/aos';
 
 import Container from '@/components/atoms/container/Container';
 import Text_links from '@/components/atoms/text_links';
-import Content from '@/components/components_thiep/Content';
+
+const Content = dynamic(() => import('@/components/components_thiep/Content'), {
+  ssr: false,
+});
+
 import ContentHeader from '@/components/components_thiep/ContentHeader';
 import ContentThiep from '@/components/components_thiep/ContentThiep';
-import SliderImage from '@/components/components_thiep/SliderImage';
+
+const SliderImage = dynamic(
+  () => import('@/components/components_thiep/SliderImage'),
+  {
+    ssr: false,
+  }
+);
+import dynamic from 'next/dynamic';
+
 import TimeEnd from '@/components/components_thiep/TimeEnd';
 import Seo from '@/components/Seo';
 

@@ -16,7 +16,7 @@ const DATA = {
   day_am: <>(Nhằm ngày 28 tháng 09 năm Quý Mão)</>,
   diaChiTop: (
     <>
-      NHÀ HÀNG VƯỜN QUÊ <br /> Sảnh tiêc: Bằng Lăng
+      NHÀ HÀNG VƯỜN QUÊ <br /> Sảnh tiệc: Bằng Lăng
     </>
   ),
   diaChiBottom: <>38 Đường số 5, P.25, Bình Thạnh - HCM</>,
@@ -258,7 +258,7 @@ export default function ContentThiep() {
                 {lang === 'vn' ? (
                   <>
                     Sự hiện diện Quý khách là niềm vinh hạnh <br /> của gia đình
-                    chúng tôi!
+                    tôi!
                   </>
                 ) : (
                   <>

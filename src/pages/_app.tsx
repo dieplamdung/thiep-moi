@@ -174,7 +174,7 @@ function MyApp() {
 
           <div className='flex justify-center'>
             <Text_links
-              href='https://drive.google.com/drive/folders/10iLAjONICTjNAidrmO9FY9Gxg1v8nWYG?usp=drive_link'
+              href='https://drive.google.com/drive/folders/10iLAjONICTjNAidrmO9FY9Gxg1v8nWYG?usp=share_link'
               target='_blank'
               className='mt-[12px]'
             >

@@ -65,7 +65,13 @@ export default function SliderImage() {
               className='aspect-video max-w-[550px]'
               key={index}
             >
-              <Image src={item} width={992} height={588} alt='hình ảnh' />
+              <Image
+                src={item}
+                width={992}
+                height={588}
+                alt='hình ảnh'
+                className='swiper-lazy'
+              />
             </StyleSwiperSlide>
           );
         })}

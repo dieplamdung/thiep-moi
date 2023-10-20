@@ -15844,7 +15844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^10.1.0":
+"swiper@npm:10.3.1 ":
   version: 10.3.1
   resolution: "swiper@npm:10.3.1"
   checksum: 9a785930ca0ab0683d7e5e116c25a38e1f8818d6f9e93848125bdf3e1874e12a6c3b9f4e9c54668e4accc2440a6f031de98cfc01a1b0068c77f8de4115034e4d
@@ -16248,7 +16248,7 @@ __metadata:
     react-icons: ^4.10.1
     storybook: ^7.0.24
     styled-components: ^6.0.1
-    swiper: ^10.1.0
+    swiper: "10.3.1 "
     tailwind-merge: ^1.13.2
     tailwindcss: ^3.3.2
     typescript: ^5.1.6

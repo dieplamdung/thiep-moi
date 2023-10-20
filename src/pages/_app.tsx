@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import '../styles/colors.css';
 import '../styles/globals.css';

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { styled } from 'styled-components';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import l1 from '@/image/listImage/l1.png';
@@ -20,26 +20,26 @@ import l10 from '@/image/listImage/l10.png';
 const LIST_IMG = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10];
 export default function SliderImage() {
   const refWrapperSwiper = useRef<any>();
-  const [indexSlide, setIndexSlide] = useState<number>(0);
+  // const [indexSlide, setIndexSlide] = useState<number>(0);
 
-  useEffect(() => {
-    const content = refWrapperSwiper.current;
-    if (content) {
-      const listDot = content.querySelectorAll('.swiper-pagination-bullet');
-      if (listDot?.length) {
-        listDot.forEach((element: any, index: number) => {
-          if (index === indexSlide) {
-            element.style.background = '#fff';
-          } else {
-            element.style.background = '#d6d4d44f';
-          }
-        });
-      }
-    }
-  }, [indexSlide, refWrapperSwiper]);
+  // useEffect(() => {
+  //   const content = refWrapperSwiper.current;
+  //   if (content) {
+  //     const listDot = content.querySelectorAll('.swiper-pagination-bullet');
+  //     if (listDot?.length) {
+  //       listDot.forEach((element: any, index: number) => {
+  //         if (index === indexSlide) {
+  //           element.style.background = '#fff';
+  //         } else {
+  //           element.style.background = '#d6d4d44f';
+  //         }
+  //       });
+  //     }
+  //   }
+  // }, [indexSlide, refWrapperSwiper]);
   return (
     <div
-      className='my-[48px] flex w-[100%] md:my-[24px]'
+      className='my-[48px] flex max-h-[500px] w-[100%] md:my-[24px]'
       ref={refWrapperSwiper}
     >
       <StyleSwiper
@@ -47,7 +47,7 @@ export default function SliderImage() {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView='auto'
-        onSlideChange={(e: any) => setIndexSlide(e?.activeIndex)}
+        // onSlideChange={(e: any) => setIndexSlide(e?.activeIndex)}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -56,7 +56,7 @@ export default function SliderImage() {
           slideShadows: true,
         }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow]}
         className='mySwiper'
       >
         {LIST_IMG.map((item, index) => {
@@ -75,7 +75,7 @@ export default function SliderImage() {
 }
 
 const StyleSwiper = styled(Swiper)`
-  .swiper-pagination {
+  /* .swiper-pagination {
     display: flex;
     gap: 12px;
     justify-content: center;
@@ -93,7 +93,7 @@ const StyleSwiper = styled(Swiper)`
       border-radius: 10px;
       background: #d6d4d44f;
     }
-  }
+  } */
 `;
 
 const StyleSwiperSlide = styled(SwiperSlide)`

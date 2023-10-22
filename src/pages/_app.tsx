@@ -17,17 +17,16 @@ const Content = dynamic(() => import('@/components/components_thiep/Content'), {
   ssr: false,
 });
 
-import ContentHeader from '@/components/components_thiep/ContentHeader';
-import ContentThiep from '@/components/components_thiep/ContentThiep';
-
-const SliderImage = dynamic(
-  () => import('@/components/components_thiep/SliderImage'),
-  {
-    ssr: false,
-  }
-);
+// const SliderImage = dynamic(
+//   () => import('@/components/components_thiep/SliderImage'),
+//   {
+//     ssr: false,
+//   }
+// );
 import dynamic from 'next/dynamic';
 
+import ContentHeader from '@/components/components_thiep/ContentHeader';
+import ContentThiep from '@/components/components_thiep/ContentThiep';
 import TimeEnd from '@/components/components_thiep/TimeEnd';
 import Seo from '@/components/Seo';
 
@@ -193,7 +192,7 @@ function MyApp() {
         </div>
       </Container>
 
-      <SliderImage />
+      {/* <SliderImage /> */}
       <div className='mt-auto'>
         <Image src={ImgLineFooter} alt='footer' />
         <TimeEnd />
